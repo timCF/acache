@@ -37,6 +37,8 @@ defmodule Acache do
   def exist?(namespace), do: (:erlang.whereis(namespace) != :undefined) and (:ets.info(namespace) != :undefined)
   def cast(namespace, handler), do: Acache.Worker.cast(namespace, handler)
   def call(namespace, handler), do: Acache.Worker.call(namespace, handler)
+  def force_serialize_cast(namespace), do: Acache.Worker.force_serialize_cast(namespace)
+  def force_serialize_call(namespace), do: Acache.Worker.force_serialize_call(namespace)
   def get(name), do: Acache.Tinca.get(name).serialized
   def get_raw(name), do: Acache.Tinca.get(name).raw
   def get_full(name), do: Acache.Tinca.get(name)
