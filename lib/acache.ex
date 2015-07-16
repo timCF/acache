@@ -46,7 +46,7 @@ defmodule Acache do
   # priv
   #
   defp get_serializer(:none), do: &(&1)
-  defp get_serializer(:json), do: &Jazz.encode!/1
+  defp get_serializer(:json), do: &(Poison.Encoder.encode(&1, []) |> Maybe.maybe_to_string)
   defp get_serializer(func) when is_function(func, 1), do: func
   #
   # structs

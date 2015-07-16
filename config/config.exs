@@ -19,7 +19,7 @@ config :acache,
 	actors:	%{
 		foo: %{value: [], serializer: :json},
 		bar: %{value: %{}, serializer: :none},
-		baz: %{value: [], serializer: &Jazz.encode!/1}
+		baz: %{value: [], serializer: :json}
 	}
 
 # It is also possible to import configuration files, relative to this

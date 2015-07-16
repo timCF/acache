@@ -17,9 +17,10 @@ defmodule Acache.Mixfile do
     [applications:  [
                       :logger,
                       :exactor,
-                      :jazz,
+                      :poison,
                       :silverb,
-                      :tinca
+                      :tinca,
+                      :maybe
                     ],
      mod: {Acache, []}]
   end
@@ -36,9 +37,10 @@ defmodule Acache.Mixfile do
   defp deps do
     [
       {:exactor, github: "sasa1977/exactor", tag: "0467f8100bc735405d597dbf94996195eb31e0b6", override: true},
-      {:jazz, github: "meh/jazz"},
+      {:poison, github: "devinus/poison"},
       {:silverb, github: "timCF/silverb"},
-      {:tinca, github: "timCF/tinca"}
+      {:tinca, github: "timCF/tinca"},
+      {:maybe, github: "timCF/maybe"}
     ]
   end
 end
